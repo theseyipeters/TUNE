@@ -2,6 +2,7 @@ import React from 'react'
 import './main.css'
 // import { useLocation } from 'react-router-dom';
 // import { Router } from 'react-router-dom';
+import './song.mp3';
 
 
 export default function Playbar() {
@@ -12,13 +13,15 @@ export default function Playbar() {
     // <Router>
       <div className='playbar'>
 
+      <audio controls>
+          <source src='./song.mp3' type='mpeg'/>
+      </audio>
 
 
 
 
 
-
-      {/* <div className='icons-container'>   
+      <div className='icons-container'>   
       <div className='iconz'>
         <div className='icon-container'><i className="fa-regular fa-heart icons"></i></div>
         <div className='icon-container'><i className="fa-solid fa-music icons"></i></div>
@@ -36,7 +39,7 @@ export default function Playbar() {
       <hr />
       <div className='icon-container'><i className="fa-solid fa-volume-high"></i></div>
       </div>
-      </div> */}
+      </div>
       </div>
     // </Router>
     

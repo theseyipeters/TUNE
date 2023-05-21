@@ -1,3 +1,7 @@
+.main{
+    width: 700px;
+}
+
 .search-pane{
     display: flex;
     flex-direction: row;
@@ -50,6 +54,10 @@
     color: #fff;
     border-radius: 10px;
     margin-left: 10px;
+    cursor: pointer;
+}
+.btn:hover{
+    background: #c0bfbf;
 }
 .title{
     display: flex;
@@ -82,6 +90,12 @@
     padding: 10px 25px;
     border-radius: 15px;
     font-size: 12px;
+    transition: all .4s ease-in-out;
+    cursor: pointer;
+}
+.play-btn:hover{
+    background: #fff;
+    color: #000;
 }
 .follow-btn{
     border: 1px solid #000;
@@ -90,6 +104,13 @@
     padding: 10px 25px;
     border-radius: 15px;
     font-size: 12px;
+    cursor: pointer;
+    transition: all .4s ease-in-out;
+}
+.follow-btn:hover{
+    background: #e5e5e5;
+    border: none;
+
 }
 .num{
     font-size: 13px;
@@ -101,7 +122,7 @@
 }
 
 .playbar{
-    height: 90px;
+    height: 20px;
     background-color: #fff;
     border-radius: 10px;
     padding: 25px 15px;

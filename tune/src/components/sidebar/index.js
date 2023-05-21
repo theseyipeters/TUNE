@@ -1,6 +1,6 @@
 // import { Link } from 'react-router-dom'
 import React, { useEffect, useState } from 'react';
-import logo from './logo.png'
+import logo from './logo.svg'
 import profile from './sugarboy.png'
 import apiClient from '../../spotify';
 import "./sidebar.css"

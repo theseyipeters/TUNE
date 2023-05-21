@@ -1,32 +1,28 @@
 import React from 'react'
 import axios from 'axios'
-
-// import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState, useEffect } from 'react';
 import './main.css'
 
-export default function Search() {
+export default function Search(props) {
 
-  const CLIENT_ID = '3b6f5190c4d240628247ebaf818038cf'
-  const CLIENT_SECRET = '3c489f19ce5d4162ba30695550340ae7'
-
+  
   const [searchInput, setSearchInput] = useState('')
+  const [artists, setArtists] = useState([])
+  const [tracks, setTracks] = useState([])
+
   const token = window.localStorage.getItem("token")
   
 
 
-  // useEffect(() => {
-  //   var authParameters = {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/x-www-form-urlencoded'
-  //     },
-  //     body: 'grant_type = client_credentials&client_id=' + CLIENT_ID + '&client_secret=' + CLIENT_SECRET
-  //   }
-  //   fetch('https://accounts.spotify.com/api/token' , authParameters)
-  //   .then(result => result.json())
-  //   .then(data => setAccessToken(data.access_token))
-  // }, [])
+
+  // const renderArtists = () => {
+  //   return artists.map(artist => (
+  //     <div key={artist.id}>
+  //         {artist.images.length ? <img width={'200px'} height={'200px'} src={artist.images[0].url} alt={artist.name} /> : <div>No Image</div>} 
+  //         {artist.name}
+  //     </div>
+  //   ))
+  // }
 
 
 
@@ -39,11 +35,22 @@ export default function Search() {
       },
       params: {
         q: searchInput,
-        type: "track"
+        type: "artist" 
       }
     })
+
     console.log(data)
+    
+    props.setSearchArtists([...data.artists.items])
+    // props.setSearchTracks ([...data.tracks])
+
+    
+   
+    
   }
+    
+
+
   return (
     <div className='search-pane'>
       <div className='arrows'>
@@ -57,8 +64,9 @@ export default function Search() {
         <button type='submit' className='btn' onClick={search}>Search</button>
         </form> 
       </div>
-      
-      
     </div>
   )
 }
+
+
+
